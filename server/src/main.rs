@@ -1,7 +1,12 @@
-use std::{net::{TcpListener, SocketAddr, IpAddr, Ipv4Addr, TcpStream}, io::Write, time::{SystemTime, UNIX_EPOCH}};
+use std::{
+    io::Write,
+    net::{IpAddr, Ipv4Addr, SocketAddr, TcpListener, TcpStream},
+    time::{SystemTime, UNIX_EPOCH},
+};
 
 fn main() {
-    let listener = TcpListener::bind(SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), 3000)).unwrap();
+    let listener =
+        TcpListener::bind(SocketAddr::new(IpAddr::V4(Ipv4Addr::new(0, 0, 0, 0)), 3000)).unwrap();
 
     let mut counter = 0;
 
